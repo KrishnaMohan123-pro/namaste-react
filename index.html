@@ -20,8 +20,8 @@
         other than its own from which a browser should permit loading resources. 
     -->
     <!-- cdn -->
-    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
-    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script> -->
     <!-- <script>
         const heading = document.createElement("h1");
         heading.innerHTML = "Hello World!!!"
@@ -29,6 +29,11 @@
         root.appendChild(heading)
     </script> -->
 
-    <script src="./app.js"></script>
+
+    <!-- Browser Script -->
+    <!-- <script src="./app.js"></script> -->
+    <!-- To let the browser know that app.js is a module -->
+    <script type="module" src="./app.js"></script>
+
 </body>
 </html>

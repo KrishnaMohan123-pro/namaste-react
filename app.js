@@ -1,5 +1,10 @@
 // React is a library because it can work on a small portion of the application
 
+// It will not work because browsers scripts cannot have imports and exports
+// so convert app.js to module
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
 // heading is just an object, not an h1 tag
 // 2nd argument is to give attributes to tag, 3rd argument is the children
 const heading = React.createElement(
