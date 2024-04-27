@@ -1,49 +1,58 @@
-// React is a library because it can work on a small portion of the application
-
-// It will not work because browsers scripts cannot have imports and exports
-// so convert app.js to module
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-// heading is just an object, not an h1 tag
-// 2nd argument is to give attributes to tag, 3rd argument is the children
-const heading = React.createElement(
-    'h1',
-    { id: 'new-heading' },
-    'Hello World From React!!!'
-);
+// React ELement --> created using React.createElement
+// React.createELement --> Object --> ReactDOM.render --> HTML Element
 
-console.log(heading);
+const heading = React.createElement('h1', { id: 'heading' }, 'Hello World');
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-// render is converting the object to h1 tag
+// it will render only the react element
 root.render(heading);
 
-/*
-<div id="parent">
-    <div id="child">
-        <h1></h1>
-        <h2></h2>
-    </div>
-</div>
-creating nested elements in react
-*/
+// Using JSX
+// JSX is not a part of React
+// JSX is not HTML in Javascript --> it has HTML-like or XML-link syntax
+// Browser only understand ES6, this is not a proper JS.
+// JSX is read by browser because of parcel. Parcel converts the code to browser understandable code using babel.
+// Babel is the package inside parcel which converts the code.
 
-const parent = React.createElement(
-    'div',
-    { id: 'parent' },
-    React.createElement('div', { id: 'child' }, [
-        React.createElement(
-            'h1',
-            { style: { color: 'blue' } },
-            'I am an h1 tag'
-        ),
-        React.createElement('h2', {}, 'I am an h2 tag'),
-    ])
+// JSX can also prevent attacks on you system
+const jsxHeading = (
+    <h1 id='heading' className='.heading'>
+        Hello World JSX!!!
+    </h1>
 );
-// passing 3rd argument as an array will create siblings
-// but this becomes very hectic to react, that is why JSX comes into picture
-console.log(parent);
+// JSX (using Babel)--> React.createElement --> Object --> ReactDOM.render --> HTML Element
+// atributes in JSX are in camelcase
+// if written in multiple lines then JSX should be wrapped in brackets
 
-// If there is something that is already present in root, it will be replaced by render.
-root.render(parent);
+console.log(jsxHeading, heading); // both are same (as attributes)
+root.render(jsxHeading);
+
+// React Components
+// Class based components and functional components
+// class --> old way
+// function --> new way
+
+// React functional component
+// it is a function that returns some JSX code
+// jsx is react element
+// so a functional component is a function which returns react component
+
+const TitleComponent = () => <h2>Hello Title</h2>;
+const HeadingComponent = () => (
+    <div>
+        <h1>Hello Functional Components</h1>
+        {/* putting component inside another component is called component composition */}
+        <TitleComponent />
+        {/* all ways of calling component are valid */}
+        <TitleComponent></TitleComponent>
+        {TitleComponent()}
+        {/* to put React Element, you can always use curly braces */}
+        {heading}
+    </div>
+);
+
+// it will render only the react component
+root.render(<HeadingComponent />);
