@@ -1,3 +1,63 @@
-#new-heading{
-    color: red
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid black;
+    align-items: center;
+}
+.logo img {
+    width: 200px;
+}
+
+.nav-items ul {
+    display: flex;
+    list-style: none;
+}
+
+.nav-items ul li {
+    padding: 0 10px;
+    margin: 10px;
+    font-size: 20px;
+}
+
+/* Body */
+
+/* Search */
+
+.search {
+    padding: 10px;
+}
+
+/* Res-container */
+.res-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Res-card */
+
+.res-card {
+    width: 200px;
+    height: 400px;
+    border: 1px solid grey;
+    box-shadow: 1px;
+    background-color: #f0f0f0;
+    padding: 5px;
+    margin: 5px 10px;
+}
+
+.res-card:hover {
+    border: 1px solid black;
+    cursor: pointer;
+}
+
+.res-card > img {
+    height: 150px;
+    width: 100%;
+}
+
+.filter-btn {
+    margin: 10px 0;
+    padding: 2px 4px;
 }
