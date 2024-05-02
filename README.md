@@ -91,3 +91,11 @@ root.render(<AppLayout />);
 
     - useState() --> creates state variables
     - useEffect()
+
+# never use anchor take because page refreshes
+
+    - instead use Link from react-router-dom
+    - this makes react makes single page application
+    - 2 types of routing --> Client side routing | Server side routing
+    - React is using Client side routing in which each component is already present in the app
+    - Server side routing happens when server sends the html pages
